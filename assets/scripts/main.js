@@ -69,7 +69,7 @@ function initializeServiceWorker() {
       });
     });
   }
-  self.addEventListener('install', function(event) {
+  /** self.addEventListener('install', function(event) {
     var CACHE_NAME = 'my-site-cache-v1';
     var urlsToCache = [
       '/',
@@ -88,7 +88,7 @@ function initializeServiceWorker() {
       );
     });
   });
-  
+
   self.addEventListener('fetch', function(event) {
     event.respondWith(
       caches.match(event.request)
@@ -102,6 +102,7 @@ function initializeServiceWorker() {
       )
     );
   });
+  **/
 }
 
 /**
