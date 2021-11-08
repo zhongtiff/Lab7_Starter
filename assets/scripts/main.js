@@ -132,7 +132,7 @@ function createRecipeCards() {
       document.querySelector('.section--recipe-expand').classList.add('shown');
       document.querySelector('recipe-expand').data = recipeData[recipes[x]];
     });
-    
+
     bindRecipeCard(recipeCard, page);
 
     document.querySelector('.recipe-cards--wrapper').appendChild(recipeCard);
@@ -224,9 +224,9 @@ function bindPopstate() {
    * so your navigate() function does not add your going back action to the history,
    * creating an infinite loop
    */
-  window.addEventListener('popstate', (event) => {
-    if(event.state){
-      router.navigate(event.state.page, true);
+  window.addEventListener('popstate', (e) => {
+    if(e.state){
+      router.navigate(e.state.page, true);
     }
     else{
       router.navigate('home', true);

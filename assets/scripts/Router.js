@@ -78,11 +78,11 @@ export class Router {
       hash = '';
     }
     else{
-      hash = `#${page}`;
+      hash = '#' + page;
     }
 
-    if(statePopped == false && window.location.hash != hash){
-      history.pushState({'page' : page}, '', window.location.origin + '/' + hash);
+    if(!statePopped && window.location.hash != hash){
+      history.pushState({'page' : page}, '', '/' + hash);
     }
 
     this[page]();
